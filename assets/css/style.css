@@ -12,6 +12,8 @@
 
 html { scroll-behavior: smooth; }
 
+section { scroll-margin-top: 6rem; }
+
 body {
   margin: 0;
   background: var(--fondo);
@@ -57,6 +59,9 @@ code {
 }
 
 .cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -65,6 +70,9 @@ code {
   max-width: 1180px;
   margin: 0 auto;
   padding: 1.6rem 1.5rem;
+  background: rgba(247, 244, 239, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
 }
 
 .marca {
@@ -140,7 +148,9 @@ code {
   border: 1px solid var(--tinta);
   cursor: pointer;
   font-family: inherit;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
+.boton:hover { transform: translateY(-2px); }
 .boton-principal { background: var(--tinta); color: var(--fondo); }
 .boton-principal:hover { background: var(--acento); border-color: var(--acento); }
 .boton-secundario { background: transparent; color: var(--tinta); }
@@ -201,6 +211,12 @@ input, select, textarea {
   color: var(--tinta);
   font: inherit;
   font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--acento);
+  box-shadow: 0 0 0 3px rgba(168, 95, 66, 0.14);
+  outline: none;
 }
 textarea { resize: vertical; }
 
@@ -225,6 +241,42 @@ form > button { justify-self: start; }
 }
 .pie p { margin: 0; }
 .pie a { text-decoration: none; }
+
+/* Movimiento: entrada escalonada y revelado al hacer scroll */
+@keyframes subir {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: none; }
+}
+
+.inicio > * {
+  animation: subir 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.inicio > :nth-child(1) { animation-delay: 0.05s; }
+.inicio > :nth-child(2) { animation-delay: 0.16s; }
+.inicio > :nth-child(3) { animation-delay: 0.3s; }
+.inicio > :nth-child(4) { animation-delay: 0.42s; }
+
+.revelar {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--retraso, 0ms);
+}
+.revelar.visible { opacity: 1; transform: none; }
+
+.rejilla svg { transition: filter 0.4s ease; }
+.rejilla figure.revelar.visible:hover { transform: translateY(-4px); }
+.rejilla figure.revelar.visible:hover svg { filter: brightness(1.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .revelar { opacity: 1; transform: none; }
+}
 
 @media (max-width: 640px) {
   body { font-size: 16px; }
