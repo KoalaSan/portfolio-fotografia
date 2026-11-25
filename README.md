@@ -1,43 +1,65 @@
-# KoalaSan · Página de fotografía
+# KoalaSan · Web de fotografía
 
-Sitio de una sola página para darte a conocer y recibir solicitudes de trabajo. HTML, CSS y JavaScript puro, sin dependencias ni compilación.
+Web profesional en español para KoalaSan: portafolio, presencia en Instagram y contacto directo por WhatsApp. HTML, CSS y JavaScript puro, sin dependencias ni compilación. Alojada gratis en GitHub Pages.
 
-Web pública: https://koalasan.github.io/portfolio-fotografia/
+**Web pública:** https://koalasan.github.io/portfolio-fotografia/
+**Instagram:** https://www.instagram.com/ElKoalaSan · **WhatsApp:** https://wa.me/717703689
 
-## Secciones
+## Estructura de páginas
 
-Inicio, sobre mí, servicios, galería con filtros y lightbox, Instagram, redes, testimonios y contacto. El contacto incluye WhatsApp directo, Instagram y un formulario con tipo de sesión y fecha del evento; al enviarlo se abre WhatsApp con los datos ya escritos.
+Cada apartado vive en su propia URL para que se pueda compartir y posicionar en Google:
+
+| Página | Contenido |
+| --- | --- |
+| `index.html` | Inicio / hero con llamada a reservar |
+| `sobre-mi.html` | Sobre mí, filosofía y cifras |
+| `servicios.html` | Bodas, eventos, retratos y comercial |
+| `galeria.html` | Galería con filtros y lightbox |
+| `instagram.html` | Fotos reales de @ElKoalaSan con enlace a cada post |
+| `redes.html` | Instagram, WhatsApp y portafolio |
+| `testimonios.html` | Opiniones de clientes |
+| `contacto.html` | WhatsApp directo y formulario con tipo de sesión y fecha |
+
+El menú, el pie, el botón flotante de WhatsApp y el panel de administración se comparten en todas las páginas; el enlace activo queda marcado.
+
+## Fotos
+
+Las fotos son **reales del perfil público de @ElKoalaSan**, descargadas de los posts públicos y guardadas en `assets/img/` (`ig-*.jpg`). No hay imágenes de stock ni URLs externas de Unsplash.
+
+- La galería y la página de Instagram se generan desde `assets/js/comun.js` (listas `FOTOS` e `INSTA`).
+- La imagen del hero está en `assets/css/estilos.css` (`.hero-bg`).
+- Las fotos de "Sobre mí" están en `sobre-mi.html`.
+
+Los posts de origen están en `assets/img/instagram.json` con su caption y enlace permanente. Para ampliar la galería, añade el archivo en `assets/img/` y una entrada en esas listas.
+
+> Antes de usar las fotos con fines comerciales, asegúrate de tener permiso de las personas retratadas si no son tuyas.
+
+## Cambiar los datos
+
+- WhatsApp: busca `717703689` en los archivos HTML y en `assets/js/comun.js` (`DEFAULTS.wa`).
+- Instagram: busca `ElKoalaSan` en los HTML y en `assets/js/comun.js` (`DEFAULTS.ig`).
+- Título principal y texto de "Sobre mí": `DEFAULTS.hero` y `DEFAULTS.about` en `assets/js/comun.js`.
+- Cifras: `data-contador="350"`, `120` y `8` en `sobre-mi.html`. Pon tus números reales.
+- Testimonios: `testimonios.html`. Las citas actuales son de ejemplo; cámbialas por opiniones reales antes de dar publicidad al sitio.
+
+## Panel de administración
+
+Botón ⚙ abajo a la izquierda, disponible en todas las páginas. La primera vez pide crear una contraseña; la guarda como hash SHA-256 en `localStorage` (`fv_settings`) y la sesión en `sessionStorage` (`fv_admin`). Permite cambiar título, texto, WhatsApp, Instagram y visibilidad de enlaces del menú.
+
+Es una barrera práctica, **no un acceso seguro**: cualquiera con acceso a tu navegador o que borre el almacenamiento puede crear otra contraseña. Los cambios solo afectan a ese navegador; para que los vean los visitantes hay que editar el código y publicarlo.
+
+## Formulario de contacto
+
+El formulario de `contacto.html` recoge nombre, email, tipo de sesión y fecha del evento. Al enviarlo abre WhatsApp con el mensaje ya redactado; la persona decide si lo envía. No hay correo falsos ni cuentas de terceros.
+
+## SEO
+
+Cada página tiene título, descripción, canonical, og: tags y datos estructurados (`ProfessionalService`). Hay un `sitemap.xml` y un `robots.txt` apuntando a él. Para que Google lo indexe antes, envía el sitemap desde Google Search Console: https://search.google.com/search-console
 
 ## Verlo en local
 
 Abre `index.html` en un navegador o ejecuta `python3 -m http.server 8000` y visita `http://localhost:8000`.
 
-## Cambiar los datos
-
-En `index.html` busca:
-
-- `717703689` para el WhatsApp (en los botones, `FV.wa` y los enlaces).
-- `ElKoalaSan` para Instagram.
-- `FV_DEFAULTS.hero` y `FV_DEFAULTS.about` para el título principal y el texto "Sobre mí".
-- `data-contador="350"`, `120` y `8` para las cifras. Pon tus números reales.
-
-El panel de administración (botón ⚙ abajo a la izquierda) permite cambiar el título, el texto, WhatsApp, Instagram y la visibilidad de algunas secciones. La primera vez te pedirá crear una contraseña; se guarda como hash en `localStorage` de **tu navegador** (`fv_settings`). Es una barrera práctica, **no un acceso seguro**: cualquier persona con acceso a tu navegador o que borre el almacenamiento puede crear otra contraseña. Los cambios del panel solo afectan a quien los hace; para que los vean los visitantes hay que editar el código y publicarlo.
-
-## Cambiar las fotos
-
-Las fotos son de ejemplo (Unsplash) y están en dos listas dentro del `<script>` final:
-
-- `fotos`: galería principal. Cada objeto tiene categoría (`bodas`, `retratos`, `eventos`, `comercial`), título y URL.
-- `instaFotos`: miniaturen del feed de Instagram.
-
-Sustituye esas URL por tus imágenes. Si las subes al repo, ponlas en `assets/img/` y usa rutas relativas, por ejemplo `assets/img/boda-01.jpg`. La imagen del hero y la foto de "Sobre mí" también son de ejemplo y están en CSS/HTML.
-
-Los testimonios son texto de ejemplo; cambia las citas y los nombres por opiniones reales antes de dar publicidad al sitio.
-
 ## Publicar en GitHub Pages
 
-El repositorio se publica desde `main`, en la raíz: **Settings → Pages → Build and deployment → Source: Deploy from a branch → Main / (root)**. La URL es `https://koalasan.github.io/portfolio-fotografia/`.
-
-## Si quieres un formulario que envíe correo
-
-Ahora el formulario abre WhatsApp. Para recibir correos, crea un formulario gratuito en https://formspree.io con tu email de destino y cambia el `submit` del formulario para enviar los datos a `https://formspree.io/f/TU_FORM_ID` con `fetch`. Necesitas un email real: la web no muestra ninguno hasta que me lo des.
+El repositorio se publica desde `main`, en la raíz: **Settings → Pages → Build and deployment → Source: Deploy from a branch → Main / (root)**. La URL es `https://koalasan.github.io/portfolio-fotografia/`. Tras cambiar archivos, si Pages sirve contenido antiguo, dispara un build desde **Settings → Pages → Build and deployment → Build site** (o la API `POST /pages/builds`).
