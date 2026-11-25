@@ -18,8 +18,8 @@ Busca en `index.html` y cambia:
 
 - El nombre ya está puesto como `KoalaSan` en el HTML; puedes cambiarlo buscando ese texto.
 - `TU EMAIL` por tu correo real (en los botones, el pie y el texto).
-- `TU WHATSAPP` por tu número con código de país, sin espacios ni `+` (por ejemplo `34612345678`).
-- `TU INSTAGRAM` por tu usuario de Instagram.
+- WhatsApp ya apunta a `717703689`. Si no abre el chat, añade el código de país delante (por ejemplo `591717703689`).
+- Instagram ya apunta a `@ElKoalaSan`.
 - `[TU CIUDAD]` y el párrafo de “Sobre mí” por tu texto real.
 
 ## Cambiar las fotos
