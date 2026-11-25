@@ -1,50 +1,43 @@
-# Página de fotografía
+# KoalaSan · Página de fotografía
 
-Sitio de una sola página para darte a conocer y recibir solicitudes de trabajo. Está hecho con HTML, CSS y JavaScript puro: no hay dependencias ni pasos de compilación.
+Sitio de una sola página para darte a conocer y recibir solicitudes de trabajo. HTML, CSS y JavaScript puro, sin dependencias ni compilación.
 
-## Verlo en tu ordenador
+Web pública: https://koalasan.github.io/portfolio-fotografia/
 
-Abre `index.html` en un navegador, o ejecuta:
+## Secciones
 
-```bash
-python3 -m http.server 8000
-```
+Inicio, sobre mí, servicios, galería con filtros y lightbox, Instagram, redes, testimonios y contacto. El contacto incluye WhatsApp directo, Instagram y un formulario con tipo de sesión y fecha del evento; al enviarlo se abre WhatsApp con los datos ya escritos.
 
-y visita `http://localhost:8000`.
+## Verlo en local
 
-## Sustituir los marcadores
+Abre `index.html` en un navegador o ejecuta `python3 -m http.server 8000` y visita `http://localhost:8000`.
 
-Busca en `index.html` y cambia:
+## Cambiar los datos
 
-- El nombre ya está puesto como `KoalaSan` en el HTML; puedes cambiarlo buscando ese texto.
-- `TU EMAIL` por tu correo real (en los botones, el pie y el texto).
-- WhatsApp ya apunta a `717703689`. Si no abre el chat, añade el código de país delante (por ejemplo `591717703689`).
-- Instagram ya apunta a `@ElKoalaSan`.
-- `[TU CIUDAD]` y el párrafo de “Sobre mí” por tu texto real.
+En `index.html` busca:
+
+- `717703689` para el WhatsApp (en los botones, `FV.wa` y los enlaces).
+- `ElKoalaSan` para Instagram.
+- `FV_DEFAULTS.hero` y `FV_DEFAULTS.about` para el título principal y el texto "Sobre mí".
+- `data-contador="350"`, `120` y `8` para las cifras. Pon tus números reales.
+
+El panel de administración (botón ⚙ abajo a la izquierda) permite cambiar el título, el texto, WhatsApp, Instagram y la visibilidad de algunas secciones. La primera vez te pedirá crear una contraseña; se guarda como hash en `localStorage` de **tu navegador** (`fv_settings`). Es una barrera práctica, **no un acceso seguro**: cualquier persona con acceso a tu navegador o que borre el almacenamiento puede crear otra contraseña. Los cambios del panel solo afectan a quien los hace; para que los vean los visitantes hay que editar el código y publicarlo.
 
 ## Cambiar las fotos
 
-Las seis imágenes de la galería son SVG de ejemplo insertados en `index.html`. Sustituye cada `<svg>` por algo como:
+Las fotos son de ejemplo (Unsplash) y están en dos listas dentro del `<script>` final:
 
-```html
-<img src="assets/img/boda-01.jpg" alt="Descripción de la foto">
-```
+- `fotos`: galería principal. Cada objeto tiene categoría (`bodas`, `retratos`, `eventos`, `comercial`), título y URL.
+- `instaFotos`: miniaturen del feed de Instagram.
 
-Coloca tus archivos en `assets/img/`. El texto `Tu foto aquí` bajo cada imagen también es editable.
+Sustituye esas URL por tus imágenes. Si las subes al repo, ponlas en `assets/img/` y usa rutas relativas, por ejemplo `assets/img/boda-01.jpg`. La imagen del hero y la foto de "Sobre mí" también son de ejemplo y están en CSS/HTML.
 
-## Habilitar el formulario
-
-El formulario usa Formspree para enviarte un correo con la solicitud.
-
-1. Crea una cuenta gratuita en https://formspree.io y añade un formulario con tu email de destino.
-2. Copia el identificador que te da (algo como `xrgq1234`).
-3. En `index.html`, cambia `https://formspree.io/f/TU_FORM_ID` por `https://formspree.io/f/xrgq1234`.
-4. Publica el cambio y prueba enviando una solicitud.
-
-Hasta que hagas esto, el formulario es una plantilla visible con el aviso `TU_FORM_ID`.
+Los testimonios son texto de ejemplo; cambia las citas y los nombres por opiniones reales antes de dar publicidad al sitio.
 
 ## Publicar en GitHub Pages
 
-El repositorio se publica desde la rama `main`, en la raíz. En GitHub: **Settings → Pages → Build and deployment → Source: Deploy from a branch → Main / (root)**.
+El repositorio se publica desde `main`, en la raíz: **Settings → Pages → Build and deployment → Source: Deploy from a branch → Main / (root)**. La URL es `https://koalasan.github.io/portfolio-fotografia/`.
 
-La URL pública será `https://koalasan.github.io/portfolio-fotografia/`.
+## Si quieres un formulario que envíe correo
+
+Ahora el formulario abre WhatsApp. Para recibir correos, crea un formulario gratuito en https://formspree.io con tu email de destino y cambia el `submit` del formulario para enviar los datos a `https://formspree.io/f/TU_FORM_ID` con `fetch`. Necesitas un email real: la web no muestra ninguno hasta que me lo des.
