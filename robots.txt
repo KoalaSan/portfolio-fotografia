@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://koalasan.github.io/portfolio-fotografia/sitemap.xml
