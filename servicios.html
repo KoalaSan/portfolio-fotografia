@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios de fotografía | KoalaSan</title>
+<meta name="description" content="Servicios de fotografía de KoalaSan en Valencia: bodas, eventos, retratos y fotografía comercial.">
+<meta name="author" content="KoalaSan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://koalasan.github.io/portfolio-fotografia/servicios.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://koalasan.github.io/portfolio-fotografia/servicios.html">
+<meta property="og:title" content="Servicios de fotografía | KoalaSan">
+<meta property="og:description" content="Servicios de fotografía de KoalaSan en Valencia: bodas, eventos, retratos y fotografía comercial.">
+<meta property="og:image" content="https://koalasan.github.io/portfolio-fotografia/assets/img/ig-DebkqMECGEK-1.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"KoalaSan","description":"Fotografía profesional de bodas, eventos, retratos y comercial en Valencia, España.","address":{"@type":"PostalAddress","addressLocality":"Valencia","addressRegion":"Comunidad Valenciana","addressCountry":"ES"},"areaServed":"Valencia","sameAs":["https://www.instagram.com/ElKoalaSan"]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<div id="preloader"><div class="preloader-logo">KS<span style="color:#c9a24b">.</span></div></div>
+<div class="cursor" id="cursor"></div>
+
+<header id="header">
+  <a href="index.html" class="logo">KoalaSan<span>.</span></a>
+  <div class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></div>
+  <nav id="nav"><ul><li><a href="index.html" data-section="inicio">Inicio</a></li><li><a href="sobre-mi.html" data-section="sobre-mi">Sobre mí</a></li><li><a class="activo" aria-current="page" href="servicios.html" data-section="servicios">Servicios</a></li><li><a href="galeria.html" data-section="galeria">Galería</a></li><li><a href="instagram.html" data-section="instagram">Instagram</a></li><li><a href="redes.html" data-section="redes">Redes</a></li><li><a href="testimonios.html" data-section="testimonios">Testimonios</a></li><li><a href="contacto.html" data-section="contacto">Contacto</a></li></ul></nav>
+</header>
+<main class="contenido-pagina">
+
+<section id="servicios" class="servicios-fondo">
+  <div class="seccion-titulo reveal"><span class="seccion-eyebrow">Lo que hago</span><h2>Servicios de fotografía</h2></div>
+  <div class="servicios-grid">
+    <div class="servicio reveal"><span class="icono">💍</span><h3>Bodas</h3><p>Cobertura completa de tu gran día. Reportaje natural y espontáneo que cuenta vuestra historia desde los preparativos hasta el baile.</p></div>
+    <div class="servicio reveal"><span class="icono">🎉</span><h3>Eventos</h3><p>Cumpleaños, comuniones, bautizos, corporativos y todo tipo de celebraciones en Valencia y alrededores.</p></div>
+    <div class="servicio reveal"><span class="icono">👤</span><h3>Retratos</h3><p>Sesiones individuales, de pareja y familiares en exteriores emblemáticos o estudio.</p></div>
+    <div class="servicio reveal"><span class="icono">🏢</span><h3>Comercial</h3><p>Fotografía de producto, gastronomía y moda para marcas que quieren destacar.</p></div>
+  </div>
+</section>
+</main>
+
+<div class="admin-modal-bg" id="admin-modal">
+  <form class="admin-modal" id="login-form">
+    <h3 style="color:var(--blanco);" id="login-titulo">Acceso administrador</h3>
+    <p style="color:#9a948b;font-size:.85rem;margin:.4rem 0 1.4rem;" id="login-desc">Introduce tu contraseña para gestionar la web.</p>
+    <div class="campo">
+      <label for="admin-pass" id="login-label">Contraseña</label>
+      <input type="password" id="admin-pass" required autocomplete="current-password" placeholder="••••••••">
+    </div>
+    <button class="btn-enviar" type="submit" id="login-submit">Entrar al panel</button>
+    <div class="form-mensaje error" id="login-error" style="display:none;margin-top:1rem;">Contraseña incorrecta, inténtalo de nuevo.</div>
+    <button type="button" class="admin-cancelar" id="login-cancelar">Cancelar</button>
+  </form>
+</div>
+<aside class="admin-panel" id="admin-panel" aria-label="Panel de administración">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.3rem;">
+    <h3 style="color:var(--blanco);">Panel de administración</h3>
+    <button id="admin-cerrar" aria-label="Cerrar panel" style="background:none;border:none;color:#9a948b;font-size:1.4rem;cursor:pointer;line-height:1;">✕</button>
+  </div>
+  <p class="admin-sub">Los cambios se guardan en este navegador. Para que los vean tus visitantes, hay que publicar el código.</p>
+  <p class="admin-seccion-titulo">Contenido</p>
+  <div class="campo"><label for="adm-hero">Título principal</label><input type="text" id="adm-hero"></div>
+  <div class="campo"><label for="adm-about">Texto "Sobre mí"</label><textarea id="adm-about" style="min-height:90px;"></textarea></div>
+  <p class="admin-seccion-titulo">Datos de contacto</p>
+  <div class="campo"><label for="adm-wa">WhatsApp (solo números)</label><input type="text" id="adm-wa"></div>
+  <div class="campo"><label for="adm-ig">Usuario de Instagram</label><input type="text" id="adm-ig"></div>
+  <p class="admin-seccion-titulo">Enlaces del menú</p>
+  <label class="check-row"><input type="checkbox" id="adm-chk-galeria"> Galería</label>
+  <label class="check-row"><input type="checkbox" id="adm-chk-instagram"> Instagram</label>
+  <label class="check-row"><input type="checkbox" id="adm-chk-testimonios"> Testimonios</label>
+  <label class="check-row" style="margin-bottom:1.4rem;"><input type="checkbox" id="adm-chk-redes"> Redes</label>
+  <p class="admin-seccion-titulo">Seguridad</p>
+  <div class="campo"><label for="adm-pass">Nueva contraseña (opcional)</label><input type="password" id="adm-pass" autocomplete="new-password" placeholder="Dejar en blanco para no cambiarla"></div>
+  <button class="btn-enviar" id="admin-guardar" type="button">Guardar cambios</button>
+  <button class="admin-cancelar" id="admin-logout" type="button">Cerrar sesión</button>
+  <div class="form-mensaje" id="admin-msg" style="display:none;margin-top:1rem;"></div>
+</aside>
+<button class="btn-admin-fab" id="admin-fab" title="Acceso administrador" aria-label="Acceso administrador">⚙</button>
+
+
+<footer>
+  <div class="redes">
+    <a href="https://www.instagram.com/ElKoalaSan" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+    <a href="https://wa.me/717703689" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+    <a href="contacto.html" aria-label="Contacto">✉</a>
+  </div>
+  <p>© 2026 KoalaSan · Fotografía profesional en <span>Valencia, España</span> · Todos los derechos reservados</p>
+</footer>
+<a class="whatsapp-float" href="https://wa.me/717703689?text=Hola!%20Me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20de%20fotos" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.2s-.8 1-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5s-.7-1.6-1-2.2c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.8-.7 2-1.4.3-.7.3-1.4.2-1.5-.1-.1-.2-.2-.5-.3zM12 22c-1.9 0-3.7-.5-5.3-1.5l-3.8 1 1-3.7C2.6 16.2 2 14.2 2 12 2 6.5 6.5 2 12 2s10 4.5 10 10-4.5 10-10 10zm0-22C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.9 1 4 1.6 5.8 1.6 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>
+</a>
+
+<script src="assets/js/comun.js"></script>
+</body>
+</html>
